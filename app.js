@@ -232,29 +232,46 @@ const CourseInfo = {
 
 // using FOR LOOP    -------    to run once EITHER condition is meet or not
 
-let score1 = 50;
-let score2 = 190;
+// let score1 = 50;
+// let score2 = 190;
+// let totalPointsPossible = 300;
+// let targetWeightedAverage = 80;
+// let maxIteractions = 1
+
+
+// for (let i= 0; i < maxIteractions; i++) {
+//     let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+//     let weightedAverageString = weightedAverage.toFixed() + "%";
+//     console.log(weightedAverageString);
+
+
+//     if (weightedAverage === targetWeightedAverage && weightedAverage <= targetWeightedAverage ) {
+        
+//         console.log("Your calculation is correct " +  targetWeightedAverage + "%.");
+        
+//     } else {
+//         console.log("Your calculation is incorrect " + targetWeightedAverage + "%. Try Again.");
+        
+//     }
+// }
+
+
+//Create and/or manipulate ARRAYS and Object-----------------------------------
+let scores = [50,190];
+// let score2 = 190;
+let totaScore = scores.reduce((acc, score)  => acc +  score, 0);
 let totalPointsPossible = 300;
-let targetWeightedAverage = 80;
-let maxIteractions = 1
 
-
-for (let i= 0; i < maxIteractions; i++) {
-    let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
-    let weightedAverageString = weightedAverage.toFixed() + "%";
-    console.log(weightedAverageString);
-
-
-    if (weightedAverage === targetWeightedAverage && weightedAverage <= targetWeightedAverage ) {
-        
-        console.log("Your calculation is correct " +  targetWeightedAverage + "%.");
-        
-    } else {
-        console.log("Your calculation is incorrect " + targetWeightedAverage + "%. Try Again.");
-        
-    }
+let weightedAverage = (totaScore) / totalPointsPossible * 100;
+let weightedAverageString = weightedAverage.toFixed() + "%";
+console.log("weightedAverage", weightedAverageString);
+if (weightedAverage === 80) {
+    console.log("your calculation is correct.");
+}else if(weightedAverage < 80){
+     console.log("The weighted average is less than 80%.Try Again.");  
+}else{
+  console.log("The weighted average is greater than 80%.Try Again.");
 }
-
 
 
 
