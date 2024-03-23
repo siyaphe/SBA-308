@@ -257,21 +257,40 @@ const CourseInfo = {
 
 
 //Create and/or manipulate ARRAYS and Object-----------------------------------
-let scores = [50,190];
-// let score2 = 190;
-let totaScore = scores.reduce((acc, score)  => acc +  score, 0);
-let totalPointsPossible = 300;
+// let scores = [50,190];
+// // let score2 = 190;
+// let totaScore = scores.reduce((acc, score)  => acc +  score, 0);
+// let totalPointsPossible = 300;
 
-let weightedAverage = (totaScore) / totalPointsPossible * 100;
-let weightedAverageString = weightedAverage.toFixed() + "%";
-console.log("weightedAverage", weightedAverageString);
-if (weightedAverage === 80) {
-    console.log("your calculation is correct.");
-}else if(weightedAverage < 80){
-     console.log("The weighted average is less than 80%.Try Again.");  
-}else{
-  console.log("The weighted average is greater than 80%.Try Again.");
-}
+// let weightedAverage = (totaScore) / totalPointsPossible * 100;
+// let weightedAverageString = weightedAverage.toFixed() + "%";
+// console.log("weightedAverage", weightedAverageString);
+// if (weightedAverage === 80) {
+//     console.log("your calculation is correct.");
+// }else if(weightedAverage < 80){
+//      console.log("The weighted average is less than 80%.Try Again.");  
+// }else{
+//   console.log("The weighted average is greater than 80%.Try Again.");
+// }
+
+
+//Demonstrate the retrieval, manipulation, and removal of items 
+//in an array or properties in an object.
+
+let student = {
+  name: "Henri",
+  age: 35,
+  city: "Pittsburgh"
+
+};
+console.log("Retrieval - Age:", student.age);
+
+student.city = " New York City";
+console.log("Manipulation - Updated Object:", student);
+
+let removeAge = delete student.age;
+console.log("Removal - removed Age:", removeAge);
+console.log("Updated Objet after Removal:", student);
 
 
 
