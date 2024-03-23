@@ -208,29 +208,52 @@ const CourseInfo = {
 
 //LOOP control Keyword such as BREAK ----------Exit the Loop if Target is achieved
 
-let score1 = 85;
+// let score1 = 85;
+// let score2 = 190;
+// let totalPointsPossible = 300;
+// let targetWeightedAverage  = 80;
+// while (true){
+//     let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+//     let weightedAverageString = weightedAverage.toFixed() + "%";
+//     console.log(weightedAverageString);
+
+
+//     if (weightedAverage === targetWeightedAverage) {
+//         console.log("your calculation is correct.");
+//         break;
+//     } else if (weightedAverage < targetWeightedAverage) {
+//         console.log("The weighted average is less than " +  targetWeightedAverage + "%. Try Again.");
+//         break;
+//     } else {
+//         console.log("The weighted average is greater than " + targetWeightedAverage + "%. Try Again.");
+//         break;
+//     }
+// }
+
+// using FOR LOOP    -------    to run once EITHER condition is meet or not
+
+let score1 = 50;
 let score2 = 190;
 let totalPointsPossible = 300;
-let targetWeightedAverage  = 80;
-while (true){
+let targetWeightedAverage = 80;
+let maxIteractions = 1
+
+
+for (let i= 0; i < maxIteractions; i++) {
     let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
     let weightedAverageString = weightedAverage.toFixed() + "%";
     console.log(weightedAverageString);
 
 
-    if (weightedAverage === targetWeightedAverage) {
-        console.log("your calculation is correct.");
-        break;
-    } else if (weightedAverage < targetWeightedAverage) {
-        console.log("The weighted average is less than " +  targetWeightedAverage + "%. Try Again.");
-        break;
+    if (weightedAverage === targetWeightedAverage && weightedAverage <= targetWeightedAverage ) {
+        
+        console.log("Your calculation is correct " +  targetWeightedAverage + "%.");
+        
     } else {
-        console.log("The weighted average is greater than " + targetWeightedAverage + "%. Try Again.");
-        break;
+        console.log("Your calculation is incorrect " + targetWeightedAverage + "%. Try Again.");
+        
     }
 }
-
-
 
 
 
