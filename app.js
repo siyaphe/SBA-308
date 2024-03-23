@@ -189,8 +189,8 @@ const CourseInfo = {
 ////            (submission.score / points_possible)                   ////
 //////////////////////////////////////////////////////////////////////////
 
-// if/else statements----------------------------------
-let score1 = 50;
+// if/else statements---------with test data
+let score1 = 85;
 let score2 = 190;
 let totaScore = score1 +  score2;
 let totalPointsPossible = 300;
@@ -200,9 +200,13 @@ let weightedAverageString = weightedAverage.toFixed() + "%"
 console.log(weightedAverageString);
 if (weightedAverage === 80) {
     console.log("your calculation is correct.");
-}else {
-    console.log("Try Again.");
+}else if(weightedAverage < 80){
+     console.log("The weighted average is less than 80%.Try Again.");  
+}else{
+  console.log("The weighted average is greater than 80%.Try Again.")
 }
+
+
 
 
 
