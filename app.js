@@ -159,16 +159,29 @@ const CourseInfo = {
 
 // console.log("Weighted Average id_125:", weightedAverage);
 
-let score1 = 39;
-let score2 = 125;
+// let score1 = 39;
+// let score2 = 125;
+// let totalScore = score1 + score2;
+// let totalPointsPossible = 200;
+
+// let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
+
+// console.log("Weighted Average id_132:", weightedAverage);
+
+////////////////////////////////////////////////////////////////////////////
+////e.g. a learner with 50/100 on one assignment and 190/200 on another////
+////           Return result in percentage 80%                        ////
+//////////////////////////////////////////////////////////////////////////
+
+
+let score1 = 50;
+let score2 = 190;
 let totalScore = score1 + score2;
-let totalPointsPossible = 200;
+let totalPointsPossible = 300;
 
-let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
+let weightedAverage = (score1 + score2 ) / (totalPointsPossible) * 100;
 
-console.log("Weighted Average id_132:", weightedAverage);
-
-
+console.log("Weighted Average:", weightedAverage + "%");
 
 
 
