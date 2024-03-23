@@ -190,21 +190,46 @@ const CourseInfo = {
 //////////////////////////////////////////////////////////////////////////
 
 // if/else statements---------with test data
+// let score1 = 85;
+// let score2 = 190;
+// let totaScore = score1 +  score2;
+// let totalPointsPossible = 300;
+
+// let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+// let weightedAverageString = weightedAverage.toFixed() + "%"
+// console.log(weightedAverageString);
+// if (weightedAverage === 80) {
+//     console.log("your calculation is correct.");
+// }else if(weightedAverage < 80){
+//      console.log("The weighted average is less than 80%.Try Again.");  
+// }else{
+//   console.log("The weighted average is greater than 80%.Try Again.")
+// }
+
+//LOOP control Keyword such as BREAK ----------Exit the Loop if Target is achieved
+
 let score1 = 85;
 let score2 = 190;
-let totaScore = score1 +  score2;
 let totalPointsPossible = 300;
+let targetWeightedAverage  = 80;
+while (true){
+    let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+    let weightedAverageString = weightedAverage.toFixed() + "%";
+    console.log(weightedAverageString);
 
-let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
-let weightedAverageString = weightedAverage.toFixed() + "%"
-console.log(weightedAverageString);
-if (weightedAverage === 80) {
-    console.log("your calculation is correct.");
-}else if(weightedAverage < 80){
-     console.log("The weighted average is less than 80%.Try Again.");  
-}else{
-  console.log("The weighted average is greater than 80%.Try Again.")
+
+    if (weightedAverage === targetWeightedAverage) {
+        console.log("your calculation is correct.");
+        break;
+    } else if (weightedAverage < targetWeightedAverage) {
+        console.log("The weighted average is less than " +  targetWeightedAverage + "%. Try Again.");
+        break;
+    } else {
+        console.log("The weighted average is greater than " + targetWeightedAverage + "%. Try Again.");
+        break;
+    }
 }
+
 
 
 
