@@ -150,14 +150,23 @@ const CourseInfo = {
 // weighted average //
 
 // Given scores and total points possible
-let score1 = 47;
-let score2 = 150;
+// let score1 = 47;
+// let score2 = 150;
+// let totalScore = score1 + score2;
+// let totalPointsPossible = 200;
+
+// let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
+
+// console.log("Weighted Average id_125:", weightedAverage);
+
+let score1 = 39;
+let score2 = 125;
 let totalScore = score1 + score2;
 let totalPointsPossible = 200;
 
 let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
 
-console.log("Weighted Average id_125:", weightedAverage);
+console.log("Weighted Average id_132:", weightedAverage);
 
 
 
