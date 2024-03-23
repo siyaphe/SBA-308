@@ -174,14 +174,40 @@ const CourseInfo = {
 //////////////////////////////////////////////////////////////////////////
 
 
+// let score1 = 50;
+// let score2 = 190;
+// let totalScore = score1 + score2;
+// let totalPointsPossible = 300;
+
+// let weightedAverage = (score1 + score2 ) / (totalPointsPossible) * 100;
+
+// console.log("Weighted Average:", weightedAverage + "%");
+
+
+////////////////////////////////////////////////////////////////////////////
+////              learner scored on the assignment                      ////
+////            (submission.score / points_possible)                   ////
+//////////////////////////////////////////////////////////////////////////
+
+// if/else statements----------------------------------
 let score1 = 50;
 let score2 = 190;
-let totalScore = score1 + score2;
+let totaScore = score1 +  score2;
 let totalPointsPossible = 300;
 
-let weightedAverage = (score1 + score2 ) / (totalPointsPossible) * 100;
+let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+let weightedAverageString = weightedAverage.toFixed() + "%"
+console.log(weightedAverageString);
+if (weightedAverage === 80) {
+    console.log("your calculation is correct.");
+}else {
+    console.log("Try Again.");
+}
 
-console.log("Weighted Average:", weightedAverage + "%");
+
+
+
+
 
 
 
