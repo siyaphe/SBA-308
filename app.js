@@ -96,17 +96,35 @@ const CourseInfo = {
 //// the ID of the learner for which this data has been collected////
 ////////////////////////////////////////////////////////////////////
 
-const learner1 = LearnerSubmissions.find((submission) => submission.learner_id == 125);
-const learner2 = LearnerSubmissions.find((submission) => submission.learner_id == 132);
+// const learner1 = LearnerSubmissions.find((submission) => submission.learner_id == 125);
+// const learner2 = LearnerSubmissions.find((submission) => submission.learner_id == 132);
 
-// Log the learner_id 
-console.log("id:", learner1?.learner_id);
-console.log("id:", learner2?.learner_id);
+// // Log the learner_id 
+// console.log("id:", learner1?.learner_id);
+// console.log("id:", learner2?.learner_id);
 
 
 //////////////////////////////////////////////////////////////////////
 ////  the learner's total, weighted average, in which Assignment ////
 ////////////////////////////////////////////////////////////////////
+
+// Learner's total id 125
+
+const learner1 = LearnerSubmissions.find(submission => submission.learner_id === 125);
+// Assuming assignment_id 0 corresponds to the first submission
+// Assuming assignment_id 1 corresponds to the second submission
+if (learner1) {
+    const score1 = learner1.submission.score; 
+    const score2 = LearnerSubmissions.find(submission => submission.learner_id === 125 && submission.assignment_id === 2)?.submission.score || 0; 
+    
+    const totalScore = score1 + score2;
+    console.log("Total Score id_125:", totalScore);
+} else {
+    console.log("Learner with ID 125 not found.");
+}
+
+
+
 
 
 
