@@ -108,7 +108,7 @@ const CourseInfo = {
 ////  the learner's total, weighted average, in which Assignment ////
 ////////////////////////////////////////////////////////////////////
 
-// Learner's total id 125
+// Learner's total id 125 //
 
 // const learner1 = LearnerSubmissions.find(submission => submission.learner_id === 125);
 // // Assuming assignment_id 0 corresponds to the first submission
@@ -124,28 +124,44 @@ const CourseInfo = {
 // }
 
 
-// Learner's total id 132
+// Learner's total id 132 //
 
-const learner2 = LearnerSubmissions.find(submission => submission.learner_id === 132);
-const totalPointsPossible = LearnerSubmissions.find(submission => submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the assignment with possible points 150
+// const learner2 = LearnerSubmissions.find(submission => submission.learner_id === 132);
+// const totalPointsPossible = LearnerSubmissions.find(submission => submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the assignment with possible points 150
 // Assuming assignment_id 0 corresponds to the first submission
 
-if (learner2) {
-    const score1 = learner2.submission.score; 
-    const score2 = LearnerSubmissions.find(submission => submission.learner_id === 132 && submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the second submission
+// if (learner2) {
+//     const score1 = learner2.submission.score; 
+//     const score2 = LearnerSubmissions.find(submission => submission.learner_id === 132 && submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the second submission
     
-    const totalScore = score1 + score2;
+//     const totalScore = score1 + score2;
     
-    // Calculate late penalties (10% reduction)
-    const latePenalties = totalPointsPossible * 0.1;
-    const scoreAfterPenalties = totalScore - latePenalties;
+//     // Calculate late penalties (10% reduction)
+//     const latePenalties = totalPointsPossible * 0.1;
+//     const scoreAfterPenalties = totalScore - latePenalties;
     
-    console.log("Total Score id_132:", totalScore);
-    console.log("Late penalties id_132:", latePenalties);
-    console.log("Score after penalties id_132:", scoreAfterPenalties);
-} else {
-    console.log("Learner with ID 132 not found.");
-}
+//     console.log("Total Score id_132:", totalScore);
+//     console.log("Late penalties id_132:", latePenalties);
+//     console.log("Score after penalties id_132:", scoreAfterPenalties);
+// } else {
+//     console.log("Learner with ID 132 not found.");
+// }
+
+// weighted average //
+
+// Given scores and total points possible
+let score1 = 47;
+let score2 = 150;
+let totalScore = score1 + score2;
+let totalPointsPossible = 200;
+
+let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
+
+console.log("Weighted Average id_125:", weightedAverage);
+
+
+
+
 
 
 
