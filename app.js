@@ -110,19 +110,42 @@ const CourseInfo = {
 
 // Learner's total id 125
 
-const learner1 = LearnerSubmissions.find(submission => submission.learner_id === 125);
+// const learner1 = LearnerSubmissions.find(submission => submission.learner_id === 125);
+// // Assuming assignment_id 0 corresponds to the first submission
+// // Assuming assignment_id 1 corresponds to the second submission
+// if (learner1) {
+//     const score1 = learner1.submission.score; 
+//     const score2 = LearnerSubmissions.find(submission => submission.learner_id === 125 && submission.assignment_id === 2)?.submission.score || 0; 
+    
+//     const totalScore = score1 + score2;
+//     console.log("Total Score id_125:", totalScore);
+// } else {
+//     console.log("Learner with ID 125 not found.");
+// }
+
+
+// Learner's total id 132
+
+const learner2 = LearnerSubmissions.find(submission => submission.learner_id === 132);
+const totalPointsPossible = LearnerSubmissions.find(submission => submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the assignment with possible points 150
 // Assuming assignment_id 0 corresponds to the first submission
-// Assuming assignment_id 1 corresponds to the second submission
-if (learner1) {
-    const score1 = learner1.submission.score; 
-    const score2 = LearnerSubmissions.find(submission => submission.learner_id === 125 && submission.assignment_id === 2)?.submission.score || 0; 
+
+if (learner2) {
+    const score1 = learner2.submission.score; 
+    const score2 = LearnerSubmissions.find(submission => submission.learner_id === 132 && submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the second submission
     
     const totalScore = score1 + score2;
-    console.log("Total Score id_125:", totalScore);
+    
+    // Calculate late penalties (10% reduction)
+    const latePenalties = totalPointsPossible * 0.1;
+    const scoreAfterPenalties = totalScore - latePenalties;
+    
+    console.log("Total Score id_132:", totalScore);
+    console.log("Late penalties id_132:", latePenalties);
+    console.log("Score after penalties id_132:", scoreAfterPenalties);
 } else {
-    console.log("Learner with ID 125 not found.");
+    console.log("Learner with ID 132 not found.");
 }
-
 
 
 
