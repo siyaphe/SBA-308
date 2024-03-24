@@ -275,26 +275,105 @@ const CourseInfo = {
 
 
 //Demonstrate the retrieval, manipulation, and removal of items 
-//in an array or properties in an object.
+//in an array or properties in an object.-----------------------------------------
 
-let student = {
-  name: "Henri",
-  age: 35,
-  city: "Pittsburgh"
+// let student = {
+//   name: "Henri",
+//   age: 35,
+//   city: "Pittsburgh"
 
-};
-console.log("Retrieval - Age:", student.age);
+// };
+// console.log("Retrieval - Age:", student.age);
 
-student.city = " New York City";
-console.log("Manipulation - Updated Object:", student);
+// student.city = " New York City";
+// console.log("Manipulation - Updated Object:", student);
 
-let removeAge = delete student.age;
-console.log("Removal - removed Age:", removeAge);
-console.log("Updated Objet after Removal:", student);
-
-
+// let removeAge = delete student.age;
+// console.log("Removal - removed Age:", removeAge);
+// console.log("Updated Objet after Removal:", student);
 
 
+//Funtions to handle repeated tasks------------------------------------------
+
+function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
+  let learnerData = [];
+
+  
+  LearnerSubmissions.forEach(submission => {
+      
+      let assignmentDetails = AssignmentGroup.assignments.find(assignment => assignment.id === submission.assignment_id);
+      if (assignmentDetails) { 
+          let formattedSubmission = {
+              learner_id: submission.learner_id,
+              assignment_id: submission.assignment_id,
+              assignment_name: assignmentDetails.name,
+              assignment_due_date: assignmentDetails.due_at,
+              score: submission.submission.score,
+              total_points_possible: assignmentDetails.points_possible
+          };
+         
+          learnerData.push(formattedSubmission);
+      }
+  });
+
+  return learnerData;
+}
+
+const learnerData = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions)
+console.log(learnerData);
+
+
+
+//program outputs processed data as describe above
+
+// $ node app.js 
+[
+  {
+    learner_id: 125,
+    assignment_id: 1,
+    assignment_name: 'Declare a Variable',
+    assignment_due_date: '2023-01-25',
+    score: 47,
+    total_points_possible: 50
+  },
+  {
+    learner_id: 125,
+    assignment_id: 2,
+    assignment_name: 'Write a Function',
+    assignment_due_date: '2023-02-27',
+    score: 150,
+    total_points_possible: 150
+  },
+  {
+    learner_id: 125,
+    assignment_id: 3,
+    assignment_name: 'Code the World',
+    assignment_due_date: '3156-11-15',
+    score: 400,
+    total_points_possible: 500
+  },
+  {
+    learner_id: 132,
+    assignment_id: 1,
+    assignment_name: 'Declare a Variable',
+    assignment_due_date: '2023-01-25',
+    score: 39,
+    total_points_possible: 50
+  },
+  {
+    learner_id: 132,
+    assignment_id: 2,
+    assignment_name: 'Write a Function',
+    assignment_due_date: '2023-02-27',
+    score: 140,
+    total_points_possible: 150
+  }
+]
+
+
+
+
+//Ensure that the program runs without errors (comment out things that do not work, and explain your blockers).
 
 
 
