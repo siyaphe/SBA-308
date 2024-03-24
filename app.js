@@ -96,77 +96,83 @@ const CourseInfo = {
 //// the ID of the learner for which this data has been collected////
 ////////////////////////////////////////////////////////////////////
 
-// const learner1 = LearnerSubmissions.find((submission) => submission.learner_id == 125);
-// const learner2 = LearnerSubmissions.find((submission) => submission.learner_id == 132);
+const learner1 = LearnerSubmissions.find((submission) => submission.learner_id == 125);
+const learner2 = LearnerSubmissions.find((submission) => submission.learner_id == 132);
 
-// // Log the learner_id 
-// console.log("id:", learner1?.learner_id);
-// console.log("id:", learner2?.learner_id);
+
+console.log("id:", learner1?.learner_id);
+console.log("id:", learner2?.learner_id);
 
 
 //////////////////////////////////////////////////////////////////////
 ////  the learner's total, weighted average, in which Assignment ////
 ////////////////////////////////////////////////////////////////////
 
-// Learner's total id 125 //
+// Learner's total id 125 //---------------------------------------------------------------------------
 
-// const learner1 = LearnerSubmissions.find(submission => submission.learner_id === 125);
-// // Assuming assignment_id 0 corresponds to the first submission
-// // Assuming assignment_id 1 corresponds to the second submission
-// if (learner1) {
-//     const score1 = learner1.submission.score; 
-//     const score2 = LearnerSubmissions.find(submission => submission.learner_id === 125 && submission.assignment_id === 2)?.submission.score || 0; 
-    
-//     const totalScore = score1 + score2;
-//     console.log("Total Score id_125:", totalScore);
-// } else {
-//     console.log("Learner with ID 125 not found.");
-// }
+const learner1 = LearnerSubmissions.find(submission => submission.learner_id === 125);
 
-
-// Learner's total id 132 //
-
-// const learner2 = LearnerSubmissions.find(submission => submission.learner_id === 132);
-// const totalPointsPossible = LearnerSubmissions.find(submission => submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the assignment with possible points 150
 // Assuming assignment_id 0 corresponds to the first submission
+// Assuming assignment_id 1 corresponds to the second submission
 
-// if (learner2) {
-//     const score1 = learner2.submission.score; 
-//     const score2 = LearnerSubmissions.find(submission => submission.learner_id === 132 && submission.assignment_id === 2)?.submission.score || 0; // Assuming assignment_id 2 corresponds to the second submission
+if (learner1) {
+    const score1 = learner1.submission.score; 
+    const score2 = LearnerSubmissions.find(submission => submission.learner_id === 125 && submission.assignment_id === 2)?.submission.score || 0; 
     
-//     const totalScore = score1 + score2;
+    const totalScore = score1 + score2;
+    console.log("Total Score id_125:", totalScore);
+} else {
+    console.log("Learner with ID 125 not found.");
+}
+
+
+// Learner's total id 132 //------------------------------------------------------------------------
+
+const learner2 = LearnerSubmissions.find(submission => submission.learner_id === 132);
+const totalPointsPossible = LearnerSubmissions.find(submission => submission.assignment_id === 2)?.submission.score || 0; 
+
+// assignment_id 2 corresponds to the assignment with possible points 150
+// assignment_id 0 corresponds to the first submission
+
+if (learner2) {
+    const score1 = learner2.submission.score; 
+    const score2 = LearnerSubmissions.find(submission => submission.learner_id === 132 && submission.assignment_id === 2)?.submission.score || 0; 
+
+// assignment_id 2 corresponds to the second submission
     
-//     // Calculate late penalties (10% reduction)
-//     const latePenalties = totalPointsPossible * 0.1;
-//     const scoreAfterPenalties = totalScore - latePenalties;
+    const totalScore = score1 + score2;
     
-//     console.log("Total Score id_132:", totalScore);
-//     console.log("Late penalties id_132:", latePenalties);
-//     console.log("Score after penalties id_132:", scoreAfterPenalties);
-// } else {
-//     console.log("Learner with ID 132 not found.");
-// }
+    // Calculate late penalties (10% reduction)
+    const latePenalties = totalPointsPossible * 0.1;
+    const scoreAfterPenalties = totalScore - latePenalties;
+    
+    console.log("Total Score id_132:", totalScore);
+    console.log("Late penalties id_132:", latePenalties);
+    console.log("Score after penalties id_132:", scoreAfterPenalties);
+} else {
+    console.log("Learner with ID 132 not found.");
+}
 
-// weighted average //
+// weighted average --------------------------------------------------------------------
 
-// Given scores and total points possible
-// let score1 = 47;
-// let score2 = 150;
-// let totalScore = score1 + score2;
-// let totalPointsPossible = 200;
 
-// let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
+let score1 = 47;
+let score2 = 150;
+let totalScore = score1 + score2;
+let totalPointsPossible = 200;
 
-// console.log("Weighted Average id_125:", weightedAverage);
+let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
 
-// let score1 = 39;
-// let score2 = 125;
-// let totalScore = score1 + score2;
-// let totalPointsPossible = 200;
+console.log("Weighted Average id_125:", weightedAverage);
 
-// let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
+let score1 = 39;
+let score2 = 125;
+let totalScore = score1 + score2;
+let totalPointsPossible = 200;
 
-// console.log("Weighted Average id_132:", weightedAverage);
+let weightedAverage = (score1 + score2 ) / (totalPointsPossible);
+
+console.log("Weighted Average id_132:", weightedAverage);
 
 ////////////////////////////////////////////////////////////////////////////
 ////e.g. a learner with 50/100 on one assignment and 190/200 on another////
@@ -174,44 +180,41 @@ const CourseInfo = {
 //////////////////////////////////////////////////////////////////////////
 
 
-// let score1 = 50;
-// let score2 = 190;
-// let totalScore = score1 + score2;
-// let totalPointsPossible = 300;
+let score1 = 50;
+let score2 = 190;
+let totalScore = score1 + score2;
+let totalPointsPossible = 300;
 
-// let weightedAverage = (score1 + score2 ) / (totalPointsPossible) * 100;
+let weightedAverage = (score1 + score2 ) / (totalPointsPossible) * 100;
 
-// console.log("Weighted Average:", weightedAverage + "%");
+console.log("Weighted Average:", weightedAverage + "%");
 
 
-////////////////////////////////////////////////////////////////////////////
-////              learner scored on the assignment                      ////
-////            (submission.score / points_possible)                   ////
-//////////////////////////////////////////////////////////////////////////
 
-// if/else statements---------with test data
-// let score1 = 85;
-// let score2 = 190;
-// let totaScore = score1 +  score2;
-// let totalPointsPossible = 300;
 
-// let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
-// let weightedAverageString = weightedAverage.toFixed() + "%"
-// console.log(weightedAverageString);
-// if (weightedAverage === 80) {
-//     console.log("your calculation is correct.");
-// }else if(weightedAverage < 80){
-//      console.log("The weighted average is less than 80%.Try Again.");  
-// }else{
-//   console.log("The weighted average is greater than 80%.Try Again.")
-// }
+// if/else statements---------with test data----------------------------------------------
+
+let score1 = 85;
+let score2 = 190;
+let totaScore = score1 +  score2;
+let totalPointsPossible = 300;
+
+let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+let weightedAverageString = weightedAverage.toFixed() + "%"
+console.log(weightedAverageString);
+if (weightedAverage === 80) {
+    console.log("your calculation is correct.");
+}else if(weightedAverage < 80){
+     console.log("The weighted average is less than 80%.Try Again.");  
+}else{
+  console.log("The weighted average is greater than 80%.Try Again.")
+}
 
 // use try/catch statements to handle potential errors---------------------------------------------
 
 try {
   let score1 = rt;
   let score2 = 190;
-  // let totaScore = score1 +  score2;
   let totalPointsPossible = 300;
   
   let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
@@ -228,175 +231,174 @@ try {
 } catch (error) {
     console.error("There is an error:", error)
 }
-// Output:
+Output:
 $ node app.js 
 There is an error: ReferenceError: rt is not defined    
     at Object.<anonymous> (C:\Users\siyap\Dev\perscholas
 
-      
-// using FOR LOOP    -------    to run once EITHER condition is meet or not
 
-// let score1 = 50;
-// let score2 = 190;
-// let totalPointsPossible = 300;
-// let targetWeightedAverage = 80;
-// let maxIteractions = 1
+// using FOR LOOP -------to run once EITHER condition is meet or not-------------------------
 
-
-// for (let i= 0; i < maxIteractions; i++) {
-//     let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
-//     let weightedAverageString = weightedAverage.toFixed() + "%";
-//     console.log(weightedAverageString);
+let score1 = 50;
+let score2 = 190;
+let totalPointsPossible = 300;
+let targetWeightedAverage = 80;
+let maxIteractions = 1
 
 
-//     if (weightedAverage === targetWeightedAverage && weightedAverage <= targetWeightedAverage ) {
+for (let i= 0; i < maxIteractions; i++) {
+    let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+    let weightedAverageString = weightedAverage.toFixed() + "%";
+    console.log(weightedAverageString);
+
+
+    if (weightedAverage === targetWeightedAverage && weightedAverage <= targetWeightedAverage ) {
         
-//         console.log("Your calculation is correct " +  targetWeightedAverage + "%.");
+        console.log("Your calculation is correct " +  targetWeightedAverage + "%.");
         
-//     } else {
-//         console.log("Your calculation is incorrect " + targetWeightedAverage + "%. Try Again.");
+    } else {
+        console.log("Your calculation is incorrect " + targetWeightedAverage + "%. Try Again.");
         
-//     }
-// }
+    }
+}
 
-//LOOP control Keyword such as BREAK ----------Exit the Loop if Target is achieved
+//LOOP control Keyword such as BREAK ----------Exit the Loop if Target is achieved--------------------
 
-// let score1 = 85;
-// let score2 = 190;
-// let totalPointsPossible = 300;
-// let targetWeightedAverage  = 80;
-// while (true){
-//     let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
-//     let weightedAverageString = weightedAverage.toFixed() + "%";
-//     console.log(weightedAverageString);
+let score1 = 85;
+let score2 = 190;
+let totalPointsPossible = 300;
+let targetWeightedAverage  = 80;
+while (true){
+    let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+    let weightedAverageString = weightedAverage.toFixed() + "%";
+    console.log(weightedAverageString);
 
 
-//     if (weightedAverage === targetWeightedAverage) {
-//         console.log("your calculation is correct.");
-//         break;
-//     } else if (weightedAverage < targetWeightedAverage) {
-//         console.log("The weighted average is less than " +  targetWeightedAverage + "%. Try Again.");
-//         break;
-//     } else {
-//         console.log("The weighted average is greater than " + targetWeightedAverage + "%. Try Again.");
-//         break;
-//     }
-// }
+    if (weightedAverage === targetWeightedAverage) {
+        console.log("your calculation is correct.");
+        break;
+    } else if (weightedAverage < targetWeightedAverage) {
+        console.log("The weighted average is less than " +  targetWeightedAverage + "%. Try Again.");
+        break;
+    } else {
+        console.log("The weighted average is greater than " + targetWeightedAverage + "%. Try Again.");
+        break;
+    }
+}
 
-//Create and/or manipulate ARRAYS and Object-----------------------------------
+//Create and/or manipulate ARRAYS and Object--------------------------------------------------------
 
-// let scores = [50,190];
-// // let score2 = 190;
-// let totaScore = scores.reduce((acc, score)  => acc +  score, 0);
-// let totalPointsPossible = 300;
+let scores = [50,190];
+let totaScore = scores.reduce((acc, score)  => acc +  score, 0);
+let totalPointsPossible = 300;
 
-// let weightedAverage = (totaScore) / totalPointsPossible * 100;
-// let weightedAverageString = weightedAverage.toFixed() + "%";
-// console.log("weightedAverage", weightedAverageString);
-// if (weightedAverage === 80) {
-//     console.log("your calculation is correct.");
-// }else if(weightedAverage < 80){
-//      console.log("The weighted average is less than 80%.Try Again.");  
-// }else{
-//   console.log("The weighted average is greater than 80%.Try Again.");
-// }
+let weightedAverage = (totaScore) / totalPointsPossible * 100;
+let weightedAverageString = weightedAverage.toFixed() + "%";
+console.log("weightedAverage", weightedAverageString);
+if (weightedAverage === 80) {
+    console.log("your calculation is correct.");
+}else if(weightedAverage < 80){
+     console.log("The weighted average is less than 80%.Try Again.");  
+}else{
+  console.log("The weighted average is greater than 80%.Try Again.");
+}
 
 
 //Demonstrate the retrieval, manipulation, and removal of items 
-//in an array or properties in an object.-----------------------------------------
+//in an array or properties in an object.--------------------------------------------------------------------
 
-// let student = {
-//   name: "Henri",
-//   age: 35,
-//   city: "Pittsburgh"
+let student = {
+  name: "Henri",
+  age: 35,
+  city: "Pittsburgh"
 
-// };
-// console.log("Retrieval - Age:", student.age);
+};
+console.log("Retrieval - Age:", student.age);
 
-// student.city = " New York City";
-// console.log("Manipulation - Updated Object:", student);
+student.city = " New York City";
+console.log("Manipulation - Updated Object:", student);
 
-// let removeAge = delete student.age;
-// console.log("Removal - removed Age:", removeAge);
-// console.log("Updated Objet after Removal:", student);
+let removeAge = delete student.age;
+console.log("Removal - removed Age:", removeAge);
+console.log("Updated Objet after Removal:", student);
 
 
-//Funtions to handle repeated tasks------------------------------------------
+//Funtions to handle repeated tasks-----------------------------------------------------------------------------
 
-// function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
-//   let learnerData = [];
+function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
+  let learnerData = [];
 
   
-//   LearnerSubmissions.forEach(submission => {
+  LearnerSubmissions.forEach(submission => {
       
-//       let assignmentDetails = AssignmentGroup.assignments.find(assignment => assignment.id === submission.assignment_id);
-//       if (assignmentDetails) { 
-//           let formattedSubmission = {
-//               learner_id: submission.learner_id,
-//               assignment_id: submission.assignment_id,
-//               assignment_name: assignmentDetails.name,
-//               assignment_due_date: assignmentDetails.due_at,
-//               score: submission.submission.score,
-//               total_points_possible: assignmentDetails.points_possible
-//           };
+      let assignmentDetails = AssignmentGroup.assignments.find(assignment => assignment.id === submission.assignment_id);
+      if (assignmentDetails) { 
+          let formattedSubmission = {
+              learner_id: submission.learner_id,
+              assignment_id: submission.assignment_id,
+              assignment_name: assignmentDetails.name,
+              assignment_due_date: assignmentDetails.due_at,
+              score: submission.submission.score,
+              total_points_possible: assignmentDetails.points_possible
+          };
          
-//           learnerData.push(formattedSubmission);
-//       }
-//   });
+          learnerData.push(formattedSubmission);
+      }
+  });
 
-//   return learnerData;
-// }
+  return learnerData;
+}
 
-// const learnerData = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions)
-// console.log(learnerData);
+const learnerData = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions)
+console.log(learnerData);
 
 
 
-//program outputs processed data as describe above
+//program outputs processed data as describe above-----------------------------------------------------------------
 
 // $ node app.js 
-// [
-//   {
-//     learner_id: 125,
-//     assignment_id: 1,
-//     assignment_name: 'Declare a Variable',
-//     assignment_due_date: '2023-01-25',
-//     score: 47,
-//     total_points_possible: 50
-//   },
-//   {
-//     learner_id: 125,
-//     assignment_id: 2,
-//     assignment_name: 'Write a Function',
-//     assignment_due_date: '2023-02-27',
-//     score: 150,
-//     total_points_possible: 150
-//   },
-//   {
-//     learner_id: 125,
-//     assignment_id: 3,
-//     assignment_name: 'Code the World',
-//     assignment_due_date: '3156-11-15',
-//     score: 400,
-//     total_points_possible: 500
-//   },
-//   {
-//     learner_id: 132,
-//     assignment_id: 1,
-//     assignment_name: 'Declare a Variable',
-//     assignment_due_date: '2023-01-25',
-//     score: 39,
-//     total_points_possible: 50
-//   },
-//   {
-//     learner_id: 132,
-//     assignment_id: 2,
-//     assignment_name: 'Write a Function',
-//     assignment_due_date: '2023-02-27',
-//     score: 140,
-//     total_points_possible: 150
-//   }
-// ]
+[
+  {
+    learner_id: 125,
+    assignment_id: 1,
+    assignment_name: 'Declare a Variable',
+    assignment_due_date: '2023-01-25',
+    score: 47,
+    total_points_possible: 50
+  },
+  {
+    learner_id: 125,
+    assignment_id: 2,
+    assignment_name: 'Write a Function',
+    assignment_due_date: '2023-02-27',
+    score: 150,
+    total_points_possible: 150
+  },
+  {
+    learner_id: 125,
+    assignment_id: 3,
+    assignment_name: 'Code the World',
+    assignment_due_date: '3156-11-15',
+    score: 400,
+    total_points_possible: 500
+  },
+  {
+    learner_id: 132,
+    assignment_id: 1,
+    assignment_name: 'Declare a Variable',
+    assignment_due_date: '2023-01-25',
+    score: 39,
+    total_points_possible: 50
+  },
+  {
+    learner_id: 132,
+    assignment_id: 2,
+    assignment_name: 'Write a Function',
+    assignment_due_date: '2023-02-27',
+    score: 140,
+    total_points_possible: 150
+  }
+]
 
 
 
