@@ -206,30 +206,34 @@ const CourseInfo = {
 //   console.log("The weighted average is greater than 80%.Try Again.")
 // }
 
-//LOOP control Keyword such as BREAK ----------Exit the Loop if Target is achieved
+// use try/catch statements to handle potential errors---------------------------------------------
 
-// let score1 = 85;
-// let score2 = 190;
-// let totalPointsPossible = 300;
-// let targetWeightedAverage  = 80;
-// while (true){
-//     let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
-//     let weightedAverageString = weightedAverage.toFixed() + "%";
-//     console.log(weightedAverageString);
+try {
+  let score1 = rt;
+  let score2 = 190;
+  // let totaScore = score1 +  score2;
+  let totalPointsPossible = 300;
+  
+  let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+  let weightedAverageString = weightedAverage.toFixed() + "%"
+  console.log(weightedAverageString);
 
+  if (weightedAverage === 80) {
+      console.log("your calculation is correct.");
+  }else if(weightedAverage < 80){
+       console.log("The weighted average is less than 80%.Try Again.");  
+  }else{
+    console.log("The weighted average is greater than 80%.Try Again.");
+  }
+} catch (error) {
+    console.error("There is an error:", error)
+}
+// Output:
+$ node app.js 
+There is an error: ReferenceError: rt is not defined    
+    at Object.<anonymous> (C:\Users\siyap\Dev\perscholas
 
-//     if (weightedAverage === targetWeightedAverage) {
-//         console.log("your calculation is correct.");
-//         break;
-//     } else if (weightedAverage < targetWeightedAverage) {
-//         console.log("The weighted average is less than " +  targetWeightedAverage + "%. Try Again.");
-//         break;
-//     } else {
-//         console.log("The weighted average is greater than " + targetWeightedAverage + "%. Try Again.");
-//         break;
-//     }
-// }
-
+      
 // using FOR LOOP    -------    to run once EITHER condition is meet or not
 
 // let score1 = 50;
@@ -255,8 +259,32 @@ const CourseInfo = {
 //     }
 // }
 
+//LOOP control Keyword such as BREAK ----------Exit the Loop if Target is achieved
+
+// let score1 = 85;
+// let score2 = 190;
+// let totalPointsPossible = 300;
+// let targetWeightedAverage  = 80;
+// while (true){
+//     let weightedAverage = (score1 + score2) / totalPointsPossible * 100;
+//     let weightedAverageString = weightedAverage.toFixed() + "%";
+//     console.log(weightedAverageString);
+
+
+//     if (weightedAverage === targetWeightedAverage) {
+//         console.log("your calculation is correct.");
+//         break;
+//     } else if (weightedAverage < targetWeightedAverage) {
+//         console.log("The weighted average is less than " +  targetWeightedAverage + "%. Try Again.");
+//         break;
+//     } else {
+//         console.log("The weighted average is greater than " + targetWeightedAverage + "%. Try Again.");
+//         break;
+//     }
+// }
 
 //Create and/or manipulate ARRAYS and Object-----------------------------------
+
 // let scores = [50,190];
 // // let score2 = 190;
 // let totaScore = scores.reduce((acc, score)  => acc +  score, 0);
@@ -295,80 +323,80 @@ const CourseInfo = {
 
 //Funtions to handle repeated tasks------------------------------------------
 
-function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
-  let learnerData = [];
+// function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
+//   let learnerData = [];
 
   
-  LearnerSubmissions.forEach(submission => {
+//   LearnerSubmissions.forEach(submission => {
       
-      let assignmentDetails = AssignmentGroup.assignments.find(assignment => assignment.id === submission.assignment_id);
-      if (assignmentDetails) { 
-          let formattedSubmission = {
-              learner_id: submission.learner_id,
-              assignment_id: submission.assignment_id,
-              assignment_name: assignmentDetails.name,
-              assignment_due_date: assignmentDetails.due_at,
-              score: submission.submission.score,
-              total_points_possible: assignmentDetails.points_possible
-          };
+//       let assignmentDetails = AssignmentGroup.assignments.find(assignment => assignment.id === submission.assignment_id);
+//       if (assignmentDetails) { 
+//           let formattedSubmission = {
+//               learner_id: submission.learner_id,
+//               assignment_id: submission.assignment_id,
+//               assignment_name: assignmentDetails.name,
+//               assignment_due_date: assignmentDetails.due_at,
+//               score: submission.submission.score,
+//               total_points_possible: assignmentDetails.points_possible
+//           };
          
-          learnerData.push(formattedSubmission);
-      }
-  });
+//           learnerData.push(formattedSubmission);
+//       }
+//   });
 
-  return learnerData;
-}
+//   return learnerData;
+// }
 
-const learnerData = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions)
-console.log(learnerData);
+// const learnerData = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions)
+// console.log(learnerData);
 
 
 
 //program outputs processed data as describe above
 
 // $ node app.js 
-[
-  {
-    learner_id: 125,
-    assignment_id: 1,
-    assignment_name: 'Declare a Variable',
-    assignment_due_date: '2023-01-25',
-    score: 47,
-    total_points_possible: 50
-  },
-  {
-    learner_id: 125,
-    assignment_id: 2,
-    assignment_name: 'Write a Function',
-    assignment_due_date: '2023-02-27',
-    score: 150,
-    total_points_possible: 150
-  },
-  {
-    learner_id: 125,
-    assignment_id: 3,
-    assignment_name: 'Code the World',
-    assignment_due_date: '3156-11-15',
-    score: 400,
-    total_points_possible: 500
-  },
-  {
-    learner_id: 132,
-    assignment_id: 1,
-    assignment_name: 'Declare a Variable',
-    assignment_due_date: '2023-01-25',
-    score: 39,
-    total_points_possible: 50
-  },
-  {
-    learner_id: 132,
-    assignment_id: 2,
-    assignment_name: 'Write a Function',
-    assignment_due_date: '2023-02-27',
-    score: 140,
-    total_points_possible: 150
-  }
-]
+// [
+//   {
+//     learner_id: 125,
+//     assignment_id: 1,
+//     assignment_name: 'Declare a Variable',
+//     assignment_due_date: '2023-01-25',
+//     score: 47,
+//     total_points_possible: 50
+//   },
+//   {
+//     learner_id: 125,
+//     assignment_id: 2,
+//     assignment_name: 'Write a Function',
+//     assignment_due_date: '2023-02-27',
+//     score: 150,
+//     total_points_possible: 150
+//   },
+//   {
+//     learner_id: 125,
+//     assignment_id: 3,
+//     assignment_name: 'Code the World',
+//     assignment_due_date: '3156-11-15',
+//     score: 400,
+//     total_points_possible: 500
+//   },
+//   {
+//     learner_id: 132,
+//     assignment_id: 1,
+//     assignment_name: 'Declare a Variable',
+//     assignment_due_date: '2023-01-25',
+//     score: 39,
+//     total_points_possible: 50
+//   },
+//   {
+//     learner_id: 132,
+//     assignment_id: 2,
+//     assignment_name: 'Write a Function',
+//     assignment_due_date: '2023-02-27',
+//     score: 140,
+//     total_points_possible: 150
+//   }
+// ]
 
 
 
